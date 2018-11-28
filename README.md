@@ -1,8 +1,6 @@
-# OnlineJudgeSolutions
-Solutions of some programming competition and business interview problems.
+# LeetCode Solutions
+LeetCode solutions using Python3.
 
-## Files
-* SenseTime-Ace-Coder-Challenge---Solutions.pdf: solutions of SenseTime Ace Coder Challenge in April 2018. (In Chinese: ”商汤”在线编程挑战赛)
 
 
 *More problems and solutions will be uploaded soon!*
