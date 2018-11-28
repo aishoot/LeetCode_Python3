@@ -1,5 +1,5 @@
 # LeetCode Solutions
-LeetCode solutions using Python3.
+My best solutions on the LeetCode using Python3.
 
 
 
