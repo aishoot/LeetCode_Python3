@@ -45,26 +45,29 @@ class Tree(object):
     # 递归实现先序遍历
     def preorder(self, root):
         if root == None:
-            return
-        print(root.elem)
-        self.preorder(root.lchild)
-        self.preorder(root.rchild)
+            return []
+        result = [root.elem]
+        left_item = self.preorder(root.lchild)
+        right_item = self.preorder(root.rchild)
+        return result + left_item + right_item
 
     # 递归实现中序遍历
     def inorder(self, root):
         if root == None:
-            return
-        self.inorder(root.lchild)
-        print(root.elem)
-        self.inorder(root.rchild)
+            return []
+        result = [root.elem]
+        left_item = self.inorder(root.lchild)
+        right_item = self.inorder(root.rchild)
+        return left_item + result + right_item
 
-    # 递归实现后续遍历
+    # 递归实现后序遍历
     def postorder(self, root):
         if root == None:
-            return
-        self.postorder(root.lchild)
-        self.postorder(root.rchild)
-        print(root.elem)
+            return []
+        result = [root.elem]
+        left_item = self.postorder(root.lchild)
+        right_item = self.postorder(root.rchild)
+        return left_item + right_item + result
 
     # 利用队列实现树的层次遍历
     def breadth_travel(self, root):
@@ -72,13 +75,21 @@ class Tree(object):
             return
         queue = []
         queue.append(root)
+        result = []
         while queue:
             node = queue.pop(0)
-            print(node.elem)
+            result.append(node.elem)
             if node.lchild != None:
                 queue.append(node.lchild)
             if node.rchild != None:
                 queue.append(node.rchild)
+        return result
 
 if __name__ == "__main__":
-    pass
+    t = Tree()
+    for i in range(10):
+        t.add(i)
+    print('层次遍历:', t.breadth_travel(t.root))
+    print('先序遍历:', t.preorder(t.root))
+    print('中序遍历:', t.inorder(t.root))
+    print('后序遍历:', t.postorder(t.root))
