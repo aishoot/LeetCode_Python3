@@ -1,5 +1,5 @@
 # LeetCode Solutions
-My best solutions on the LeetCode using Python3.
+My best solutions on the LeetCode using Python3. I'm pursuing Python code **concise** and **efficient**.
 
 ![](leetcode2.png)
 
