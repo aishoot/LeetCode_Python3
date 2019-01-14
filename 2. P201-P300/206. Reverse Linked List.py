@@ -29,6 +29,16 @@ def reverseList(self, head):
         prev = curr
     return prev
 
+# 在上面的基础上我的另一个版本
+def reverseList(self, head):
+    cur = head.next if head else None
+    while cur:
+        prev = cur
+        cur = cur.next
+        prev.next = head
+        head = prev
+    return head
+
 # 解法2：递归版本
 class Solution(object):
     def reverseList(self, head, last = None):
