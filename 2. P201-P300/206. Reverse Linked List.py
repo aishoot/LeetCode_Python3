@@ -29,9 +29,11 @@ def reverseList(self, head):
         prev = curr
     return prev
 
-# 在上面的基础上我的另一个版本
+# 在上面的基础上我的另一个版本(不采用)
 def reverseList(self, head):
     cur = head.next if head else None
+    if head:
+        head.next = None
     while cur:
         prev = cur
         cur = cur.next
