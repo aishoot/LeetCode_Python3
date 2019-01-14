@@ -33,7 +33,7 @@ def reverseList(self, head):
 def reverseList(self, head):
     cur = head.next if head else None
     if head:
-        head.next = None
+        head.next = None  # 断开不然会成环使程序超内存限制
     while cur:
         prev = cur
         cur = cur.next
