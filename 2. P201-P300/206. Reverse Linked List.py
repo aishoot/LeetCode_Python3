@@ -19,7 +19,7 @@ class Solution(object):
             new_head, head = node, head.next
         return new_head
 
-# 另一个版本，不增加额外空间，直接在原head上修改指针
+# 另一个版本，不增加额外空间，直接在原head上修改指针(原地反转链表)
 def reverseList(self, head):
     prev = None
     while head:
