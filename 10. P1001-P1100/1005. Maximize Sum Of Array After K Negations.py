@@ -34,7 +34,8 @@ class Solution:
             i += 1
             K -= 1
  
-        if K == 0 or 0 in A or K % 2 == 0:  return sum(A)
+        if K == 0 or 0 in A or K % 2 == 0:
+            return sum(A)
         else:
             A = sorted(A)
             return sum(A) - 2*A[0]
