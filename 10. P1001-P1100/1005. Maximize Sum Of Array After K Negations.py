@@ -13,27 +13,6 @@ class Solution:
 # 我的代码-常规思路-时间很短
 class Solution:
     def largestSumAfterKNegations(self, A: List[int], K: int) -> int:
-        n = 0  # 负数个数
-        for val in A:
-            if val < 0:
-                n += 1
-        A.sort()  # 从小到大排列
-        if n >= K:
-            for i in range(K):
-                A[i] = -A[i]
-            return sum(A)
-        else:
-            for i in range(n):
-                A[i] = -A[i]
-            re = K - n
-            if re % 2 == 0:  # 偶数
-                return sum(A)
-            else:
-                return sum(A) - 2 * min(A)
-
-# 进一步优化
-class Solution:
-    def largestSumAfterKNegations(self, A: List[int], K: int) -> int:
         n = len([i for i in A if i < 0])  # 负数个数
         A.sort()  # 从小到大排列
         for i in range(min(K, n)):
@@ -45,3 +24,18 @@ class Solution:
                 return sum(A)
             else:
                 return sum(A) - 2 * min(A)
+
+ # 另外的解法
+class Solution:
+    def largestSumAfterKNegations(self, A: List[int], K: int) -> int:
+        A, i = sorted(A), 0
+        while A[i] <= 0 and K > 0:
+            A[i] = -A[i]
+            i += 1
+            K -= 1
+ 
+        if K == 0 or 0 in A or K % 2 == 0:  return sum(A)
+        else:
+            A = sorted(A)
+            return sum(A) - 2*A[0]
+  
