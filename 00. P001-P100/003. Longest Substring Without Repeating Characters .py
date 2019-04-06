@@ -26,8 +26,8 @@ class Solution:
             maxLen = max(maxLen, i - last + 1)
         return maxLen
     
-    # 时间最快
-    class Solution:
+# 时间最快
+class Solution:
     def lengthOfLongestSubstring(self, s: 'str') -> 'int':
         dic, res, start, = {}, 0, 0
         for i, ch in enumerate(s):
