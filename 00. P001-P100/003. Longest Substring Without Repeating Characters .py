@@ -25,3 +25,14 @@ class Solution:
             hmap[s[i]] = i
             maxLen = max(maxLen, i - last + 1)
         return maxLen
+    
+    # 时间最快
+    class Solution:
+    def lengthOfLongestSubstring(self, s: 'str') -> 'int':
+        dic, res, start, = {}, 0, 0
+        for i, ch in enumerate(s):
+            if ch in dic:
+                res = max(res, i-start)
+                start = max(start, dic[ch]+1)
+            dic[ch] = i
+        return max(res, len(s)-start)
